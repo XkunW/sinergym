@@ -45,3 +45,6 @@ dist/
 
 #.pytype
 .pytype/
+
+# MacOS files
+.DS_Store

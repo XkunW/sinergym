@@ -149,6 +149,11 @@ DEFAULT_5ZONE_OBSERVATION_VARIABLES = [
     'Facility Total HVAC Electricity Demand Rate(Whole Building)'
 ]
 
+LIMITED_5ZONE_OBSERVATION_VARIABLES = [
+    'Zone Air Temperature(SPACE1-1)',
+    'Facility Total HVAC Electricity Demand Rate(Whole Building)'
+]
+
 DEFAULT_5ZONE_ACTION_VARIABLES = [
     'Heating_Setpoint_RL',
     'Cooling_Setpoint_RL',
@@ -158,6 +163,12 @@ DEFAULT_5ZONE_OBSERVATION_SPACE = gym.spaces.Box(
     low=-5e6,
     high=5e6,
     shape=(len(DEFAULT_5ZONE_OBSERVATION_VARIABLES) + 4,),
+    dtype=np.float32)
+
+LIMITED_5ZONE_OBSERVATION_SPACE = gym.spaces.Box(
+    low=-5e6,
+    high=5e6,
+    shape=(len(LIMITED_5ZONE_OBSERVATION_VARIABLES) + 4,),
     dtype=np.float32)
 
 DEFAULT_5ZONE_ACTION_MAPPING = {

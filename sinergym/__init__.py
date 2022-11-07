@@ -61,6 +61,28 @@ register(
         'env_name': '5Zone-hot-discrete-v1',
         'action_definition': DEFAULT_5ZONE_ACTION_DEFINITION})
 
+# 1.1) 5-zone, hot weather, discrete actions, limited features
+register(
+    id='Eplus-5Zone-hot-discrete-limited-v1',
+    entry_point='sinergym.envs:EplusEnv',
+    kwargs={
+        'idf_file': '5ZoneAutoDXVAV.idf',
+        'weather_file': 'USA_AZ_Davis-Monthan.AFB.722745_TMY3.epw',
+        'observation_space': LIMITED_5ZONE_OBSERVATION_SPACE,
+        'observation_variables': LIMITED_5ZONE_OBSERVATION_VARIABLES,
+        'action_space': DEFAULT_5ZONE_ACTION_SPACE_DISCRETE,
+        'action_variables': DEFAULT_5ZONE_ACTION_VARIABLES,
+        'action_mapping': DEFAULT_5ZONE_ACTION_MAPPING,
+        'reward': LinearReward,
+        'reward_kwargs': {
+            'temperature_variable': 'Zone Air Temperature(SPACE1-1)',
+            'energy_variable': 'Facility Total HVAC Electricity Demand Rate(Whole Building)',
+            'range_comfort_winter': (20.0, 23.5),
+            'range_comfort_summer': (23.0, 26.0)
+        },
+        'env_name': '5Zone-hot-discrete-limited-v1',
+        'action_definition': DEFAULT_5ZONE_ACTION_DEFINITION})
+
 # 2) 5-zone, mixed weather, discrete actions
 register(
     id='Eplus-5Zone-mixed-discrete-v1',
