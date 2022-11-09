@@ -150,8 +150,7 @@ DEFAULT_5ZONE_OBSERVATION_VARIABLES = [
 ]
 
 LIMITED_5ZONE_OBSERVATION_VARIABLES = [
-    'Zone Air Temperature(SPACE1-1)',
-    # 'Facility Total HVAC Electricity Demand Rate(Whole Building)'
+    'Zone Air Temperature(SPACE1-1)'
 ]
 
 DEFAULT_5ZONE_ACTION_VARIABLES = [
